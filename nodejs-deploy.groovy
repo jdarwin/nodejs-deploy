@@ -1,7 +1,7 @@
-// You will need Docker Pipeline plugin in Jenkins for this Jenkins file script to work
+        // You will need Docker Pipeline plugin in Jenkins for this Jenkins file script to work
 pipeline {
     environment {
-        registry = "myjddocker/phpfpm-app"
+        registry = "myjddocker/nodejs-erp"
         registryCredential = 'docker_id'
         dockerImage = ''
     }
@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Cloning Git Repo.') {
         steps {
-        git branch: 'main', url: 'https://github.com/jdarwin/nodejs-deploy.git'
+        git branch: 'master', url: 'https://github.com/jdarwin/nodejs-deploy.git'
         }
     }
     stage('Building our image') {
@@ -49,6 +49,9 @@ pipeline {
                 }
             }
         }
+    }
+}
+}}
     }
 }
 }

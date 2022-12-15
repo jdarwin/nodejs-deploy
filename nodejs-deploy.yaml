@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nodejsapp-erp
-          image: "myjddocker/nodejs-erp:latest"
+          image: "myjddocker/nodejs-erp:2"
   replicas: 1
   selector:
     matchLabels:
